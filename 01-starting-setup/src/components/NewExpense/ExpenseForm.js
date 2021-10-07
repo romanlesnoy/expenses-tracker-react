@@ -6,40 +6,17 @@ function ExpenseForm(props) {
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredDate, setEnteredDate] = useState("");
-    // const [userInput, setUserInput] = useState({
-    //     enteredTitle: "",
-    //     enteredAmount: "",
-    //     enteredDate: "",
-    // });
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredTitle: event.target.value
-        // });
-        // setUserInput((prevState) => {
-        //     return {
-        //         ...prevState,
-        //         enteredTitle: event.target.value
-        //     };
-        // })
     };
 
     const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredAmount: event.target.value
-        // });
     };
 
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredDate: event.target.value
-        // });
     };
 
     const submitHandler = (event) => {
@@ -52,11 +29,19 @@ function ExpenseForm(props) {
         };
 
         props.onSaveExpenseData(expenseData);
-        
-        setEnteredTitle('');
-        setEnteredAmount('');
-        setEnteredDate('');
+
+        setEnteredTitle("");
+        setEnteredAmount("");
+        setEnteredDate("");
     };
+
+    const cancelHandler = () => {
+        setEnteredTitle("");
+        setEnteredAmount("");
+        setEnteredDate("");
+
+        props.setVisibleForm();
+    }
 
     return (
         <form onSubmit={submitHandler}>
@@ -91,6 +76,7 @@ function ExpenseForm(props) {
             </div>
 
             <div className="new-expense__actions">
+                <button type="button" onClick={cancelHandler}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
