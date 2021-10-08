@@ -9,11 +9,11 @@
 
 - Клонировать репозиторий
     ```bash
-    $ git clone https://github.com/romanlesnoy/movies-explorer-frontend.git
+    $ git clone https://github.com/romanlesnoy/expenses-tracker-react.git
     ```
 - Перейти в директорию проекта и установить зависимости
     ```bash
-    $ cd movies-explorer-frontend && npm install
+    $ cd  expenses-tracker-react && npm install
     ```
 - Запустить приложение
     ```bash
