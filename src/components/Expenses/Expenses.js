@@ -5,7 +5,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
-function Expenses (props) {
+function Expenses(props) {
     const [filteredYear, setFilteredYear] = useState("2020");
 
     const filteredExpenses = props.items.filter(
@@ -22,7 +22,7 @@ function Expenses (props) {
                 selectedYear={filteredYear}
                 onChangeFilter={dropdownMenuChangeHandler}
             />
-            <ExpensesList items={filteredExpenses}/>
+            <ExpensesList items={filteredExpenses} />
         </Card>
     );
 }
